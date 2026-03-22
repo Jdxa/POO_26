@@ -33,6 +33,7 @@ Auto >> inicializarMatricula: unaPatente modelo: unModelo [
 
 { #category : #initialize }
 Auto >> inicializarMatricula: unaPatente modelo: unModelo kmrecorridos: recorridos [
+	"metodo de inicializacion de atributos"
 	patente  := unaPatente .
 	modelo := unModelo .
 	cantKmRecorridos := recorridos .
