@@ -22,6 +22,23 @@ Auto class >> crearAutoPatente: patente modelo:unModelo kmrecorridos: recorridos
 
 ]
 
+{ #category : #updating }
+Auto >> andarKm: n [
+n < 0 ifTrue: [ self error: 'No se pueden agregar km negativos' ].
+self cantKmRecorridos: self cantKmRecorridos + n.
+]
+
+{ #category : #accessing }
+Auto >> cantKmRecorridos [
+^ cantKmRecorridos.
+]
+
+{ #category : #accessing }
+Auto >> cantKmRecorridos: unKm [
+	unKm < 0 ifTrue: [ self error: 'No puede ser negativo' ].
+	cantKmRecorridos := unKm.
+]
+
 { #category : #initialize }
 Auto >> inicializarMatricula: unaPatente modelo: unModelo [
 	patente  := unaPatente .
@@ -40,4 +57,24 @@ Auto >> inicializarMatricula: unaPatente modelo: unModelo kmrecorridos: recorrid
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
 	
+]
+
+{ #category : #accessing }
+Auto >> modelo [
+^ modelo.
+]
+
+{ #category : #accessing }
+Auto >> modelo: unModelo [
+	modelo := unModelo. 
+]
+
+{ #category : #accessing }
+Auto >> patente [ 
+^ patente.
+]
+
+{ #category : #accessing }
+Auto >> patente: unaPatente [
+	patente:= unaPatente .
 ]
