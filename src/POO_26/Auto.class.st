@@ -59,6 +59,12 @@ Auto >> inicializarMatricula: unaPatente modelo: unModelo kmrecorridos: recorrid
 	
 ]
 
+{ #category : #comparing }
+Auto >> mismaPatente: otroAuto [
+
+	^ self patente = otroAuto patente
+]
+
 { #category : #accessing }
 Auto >> modelo [
 ^ modelo.
