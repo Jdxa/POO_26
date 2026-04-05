@@ -1,6 +1,7 @@
 "
 Please comment me using the following template inspired by Class Responsibility Collaborator (CRC) design:
-Clase de auto
+clase auto
+
 For the Class part:  State a one line summary. For example, ""I represent a paragraph of text"".
 
 For the Responsibility part: Three sentences about my main responsibilities - what I do, what I know.
@@ -37,11 +38,11 @@ Class {
 }
 
 { #category : #constructor }
-Auto class >> crearAutoPatente: patente modelo:unModelo kmrecorridos: recorridos [
+Auto class >> crearAutoPatente: unaPatente modelo:unModelo kmrecorridos: recorridos [
 	 |miAuto| "creo variable temporal"
 	 miAuto := self new.	 "creo objeto"
 	"inicializo parametros con metodo de instancia"
-	miAuto inicializarMatricula: patente  
+	miAuto inicializarMatricula: unaPatente  
 				modelo: unModelo   
 				kmrecorridos: recorridos .
 	^ miAuto   "retorno el objeto creado"
