@@ -63,7 +63,7 @@ Fiesta >> iniciarFiestaNombre: unNombre lugar: unLugar fecha: unaFecha artista: 
 	nombre := unNombre.
 	lugar := unLugar.
 	fechaInicio := unaFecha.
-	elArtista := unArtista
+	elArtista := unArtista.
 ]
 
 { #category : #accessing }
