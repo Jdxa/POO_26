@@ -5,12 +5,23 @@ Class {
 		'dni',
 		'nombre',
 		'apellido',
-		'telefono',
-		'tipoTarjeta',
-		'vencimientoTarjeta'
+		'cuenta'
 	],
 	#category : #'POO_26'
 }
+
+{ #category : #constructor }
+Cliente class >> crearClienteDNI: unDni nombre: unNombre apellido: unApellido [
+
+	| unCliente |
+	unCliente := self new.
+	unCliente
+		iniciarClienteDNI: unDni
+		nombre: unNombre
+		apellido: unApellido
+		cuenta: Cuenta new.
+	^ unCliente
+]
 
 { #category : #accessing }
 Cliente >> apellido [
@@ -25,6 +36,23 @@ Cliente >> apellido: anObject [
 ]
 
 { #category : #accessing }
+Cliente >> cuenta [
+
+	^ cuenta
+]
+
+{ #category : #accessing }
+Cliente >> cuenta: anObject [
+
+	cuenta := anObject
+]
+
+{ #category : #propio }
+Cliente >> darCuenta: unaCuenta [
+cuenta := unaCuenta .
+]
+
+{ #category : #accessing }
 Cliente >> dni [
 
 	^ dni
@@ -34,6 +62,14 @@ Cliente >> dni [
 Cliente >> dni: anObject [
 
 	dni := anObject
+]
+
+{ #category : #initialize }
+Cliente >> iniciarClienteDNI: unDni nombre: unNombre apellido: unApellido cuenta: unaCuenta [
+dni := unDni.
+nombre := unNombre.
+apellido := unApellido.
+cuenta := unaCuenta .
 ]
 
 { #category : #accessing }
@@ -46,49 +82,4 @@ Cliente >> nombre [
 Cliente >> nombre: anObject [
 
 	nombre := anObject
-]
-
-{ #category : #accessing }
-Cliente >> telefono [
-
-	^ telefono
-]
-
-{ #category : #accessing }
-Cliente >> telefono: anObject [
-
-	telefono := anObject
-]
-
-{ #category : #accessing }
-Cliente >> tipoTarjeta [
-
-	^ tipoTarjeta
-]
-
-{ #category : #accessing }
-Cliente >> tipoTarjeta: anObject [
-
-	tipoTarjeta := anObject
-]
-
-{ #category : #accessing }
-Cliente >> vencimientoTarjeta [
-
-	^ vencimientoTarjeta
-]
-
-{ #category : #accessing }
-Cliente >> vencimientoTarjeta: anObject [
-
-	vencimientoTarjeta := anObject
-]
-
-{ #category : #comparing }
-Cliente >> verificarVencimiento [
-	"devuelve la cantidad de dias entre el vencimiento y la fecha actual"
-	| hoy dias |
-	hoy := Date today.
-	dias := vencimientoTarjeta subtractDate: hoy.
-	^ dias
 ]
