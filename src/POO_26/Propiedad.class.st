@@ -15,15 +15,6 @@ Class {
 }
 
 { #category : #constructor }
-Propiedad class >> crearPropiedadId: unId direccion: unaDireccion cantHabitaciones: unaCantHabitaciones cantBaños: unaCantBaños tamM2: unTamM2 nombreCiudad: unNombreCiudad coordenadas: unaCoordenada [
-|unaPropiedad|
-unaPropiedad := self new.
-unaPropiedad iniciarPropiedadId: unId  direccion: unaDireccion  cantHabitaciones: unaCantHabitaciones  cantBaños: unaCantHabitaciones.
-unaPropiedad iniciarPropiedadTamM2:  unTamM2  nombreCiudad: unNombreCiudad  coordenadas: unaCoordenada. ^unaPropiedad .
-
-]
-
-{ #category : #constructor }
 Propiedad class >> crearPropiedadId: unId direccion: unaDireccion cantHabitaciones: unaCantHabitaciones cantBaños: unaCantBaños tamM2: unTamM2 nombreCiudad: unNombreCiudad coordenadas: unaCoordenada estaHbitada: unBooleano [
 
 	| unaPropiedad |
@@ -138,15 +129,6 @@ cantBaños := unaCantHabitaciones .
 ]
 
 { #category : #initialize }
-Propiedad >> iniciarPropiedadTamM2: unTamaño nombreCiudad: unNombreCiudad coordenadas: unaCoordenada [
-
-	tamM2 := unTamaño.
-	nombreCiudad := unNombreCiudad.
-	coordenadas := unaCoordenada.
-	estaHabitada := Boolean new. 
-]
-
-{ #category : #initialize }
 Propiedad >> iniciarPropiedadTamM2: unTamaño nombreCiudad: unNombreCiudad coordenadas: unaCoordenada estaHabitada: unBooleano [
 
 	tamM2 := unTamaño.
@@ -186,5 +168,6 @@ Propiedad >> toString [
 	calle := direccion calle.
 	numero := direccion numero.
 	codigopostal := direccion codigoPostal.
-	^ calle , ', ' , numero printString , ', CP: ' , codigopostal printString
+	^ calle , ', ' , numero printString, nombreCiudad  , ', CP: '
+	  , codigopostal printString
 ]

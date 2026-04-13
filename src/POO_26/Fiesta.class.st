@@ -5,7 +5,8 @@ Class {
 		'nombre',
 		'lugar',
 		'fechaInicio',
-		'elArtista'
+		'elArtista',
+		'colArtistas'
 	],
 	#category : #'POO_26'
 }
@@ -16,9 +17,31 @@ Fiesta class >> crearFiestaNombre: unNombre lugar: unLugar fecha: unaFecha artis
 	| unaFiesta |
 	unaFiesta := self new.
 
-	unaFiesta iniciarFiestaNombre: unNombre  lugar: unLugar   fecha: unaFecha  artista: unArtista. 
-		
+	unaFiesta
+		iniciarFiestaNombre: unNombre
+		lugar: unLugar
+		fecha: unaFecha
+		artista: unArtista
+		colArtistas: OrderedCollection new.
+
 	^ unaFiesta
+]
+
+{ #category : #propio }
+Fiesta >> agregarArtistas: unArtista [
+colArtistas add: unArtista .
+]
+
+{ #category : #accessing }
+Fiesta >> colArtistas [
+
+	^ colArtistas
+]
+
+{ #category : #accessing }
+Fiesta >> colArtistas: anObject [
+
+	colArtistas := anObject
 ]
 
 { #category : #accessing }
@@ -64,6 +87,15 @@ Fiesta >> iniciarFiestaNombre: unNombre lugar: unLugar fecha: unaFecha artista: 
 	lugar := unLugar.
 	fechaInicio := unaFecha.
 	elArtista := unArtista.
+]
+
+{ #category : #initialize }
+Fiesta >> iniciarFiestaNombre: unNombre lugar: unLugar fecha: unaFecha artista: unArtista colArtistas: unaColArtistas [
+nombre := unNombre .
+lugar := unLugar .
+fechaInicio := unaFecha.
+elArtista := unArtista .
+colArtistas := unaColArtistas .
 ]
 
 { #category : #accessing }
