@@ -11,7 +11,7 @@ Class {
 }
 
 { #category : #constructor }
-Guerrero class >> crearGuerreroAtaque: unAtaque defensa: unaDefensa vida: unaVida [ 
+Guerrero class >> crearGuerreroAtaque: unAtaque defensa: unaDefensa vida: unaVida [
 
 	| unGuerrero |
 	unGuerrero := self new.
@@ -19,7 +19,7 @@ Guerrero class >> crearGuerreroAtaque: unAtaque defensa: unaDefensa vida: unaVid
 		iniciarGuerreroAtaque: unAtaque
 		defensa: unaDefensa
 		vida: unaVida
-		arma: Arma new.
+		arma: nil.
 	^ unGuerrero
 ]
 
@@ -78,6 +78,21 @@ Guerrero >> iniciarGuerreroAtaque: unAtaque defensa: unaDefensa vida: unaVida ar
 	defensa := unaDefensa .
 	vida := unaVida .
 	arma := unArma .
+]
+
+{ #category : #propio }
+Guerrero >> toString [
+
+	| cadena |
+	cadena := ataque asString , ' de ataque + ' , defensa asString
+	          , ' de defensa + ' , vida asString , ' de vida'.
+
+	cadena := cadena
+	          ,
+	          (self arma
+		           ifNil: [ ', sin armas' ]
+		           ifNotNil: [ ', armado' ]).
+	^ cadena
 ]
 
 { #category : #accessing }

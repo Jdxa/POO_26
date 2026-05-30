@@ -68,6 +68,7 @@ Arma >> tipo: anObject [
 { #category : #propio }
 Arma >> toString [
 	"Retorna tipo: valor de ataque + valor de durabilidad "
-	^ tipo , ': ' , ataque asString , ' de ataque ' , ' + '
-	  , durabilidad asString , ' de durabilidad'
+
+	^ tipo , ': ' , ataque asString , ' de ataque + '
+	  ,durabilidad asString , ' de durabilidad'
 ]
