@@ -21,16 +21,8 @@ AutoElectrico class >> crearColor: col marca: unaMarca cantPuertas: unaCantPuert
 		          cantPuertas: unaCantPuertas
 		          velMax: unaVelMax
 		          aceleracion: unaAceleracion.
-		unAuto iniciarAutonomia: unaAceleracion cargaActual: unaCarga.
-		^unAuto.
-]
-
-{ #category : #propio }
-AutoElectrico >> andarKm: cantKm [
-
-	(self verificarAndar: cantKm )ifTrue: [ 
-		super andarKm: cantKm  ].
-	
+	unAuto iniciarAutonomia: unaAutonomia  cargaActual: unaCarga.
+	^ unAuto
 ]
 
 { #category : #accessing }
@@ -60,11 +52,7 @@ AutoElectrico >> cargaActual: anObject [
 { #category : #propio }
 AutoElectrico >> gastarCombustible: cantKm [
 
-	| consumido |
-	"le quito a carga actual lo que voy a consumir"
-	consumido := cantKm * 100 / autonomia.
-	
-	cargaActual := cargaActual - consumido
+	cargaActual := cargaActual - (cantKm * 100 / autonomia).
 ]
 
 { #category : #initialize }
